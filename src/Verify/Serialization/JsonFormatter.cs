@@ -26,7 +26,7 @@
             }
         }
 
-        var builder = StringBuilder();
+        var builder = StringBuilderCache.Acquire();
         using var writer = new VerifyJsonWriter(builder, settings.serialization, settings.Context, counter);
         settings.Serializer.Serialize(writer, input);
         return builder;

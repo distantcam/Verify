@@ -7,8 +7,8 @@
         IReadOnlyList<string> delete,
         IReadOnlyList<FilePair> equal)
     {
-        var builder = new StringBuilder($"Directory: {directory}");
-        builder.AppendLine();
+        var builder = StringBuilderCache.Acquire(StringBuilderCache.MaxBuilderSize);
+        builder.AppendLine($"Directory: {directory}");
 
         if (@new.Any())
         {
@@ -48,7 +48,7 @@
 
         AppendContent(@new, notEquals, builder);
 
-        return builder.ToString();
+        return builder.GetStringAndRelease();
     }
 
     static void AppendFile(StringBuilder builder, FilePair file)

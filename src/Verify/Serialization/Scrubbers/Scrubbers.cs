@@ -73,6 +73,6 @@ public static class Scrubbers
         }
 
         builder.TrimEnd();
-        return StringBuilderCache.GetStringAndRelease(builder);
+        return builder.GetStringAndRelease();
     }
 }

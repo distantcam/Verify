@@ -125,7 +125,7 @@ public static partial class VerifierSettings
             throw new($"{parameter.GetType().FullName} returned a null for `ToString()`.");
         }
 
-        var builder = StringBuilderCache.Acquire(50);
+        var builder = StringBuilderCache.Acquire();
         foreach (var ch in nameForParameter)
         {
             if (invalidPathChars.Contains(ch))
@@ -138,7 +138,7 @@ public static partial class VerifierSettings
             }
         }
 
-        return StringBuilderCache.GetStringAndRelease(builder);
+        return builder.GetStringAndRelease();
     }
 
     /// <summary>

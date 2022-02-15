@@ -44,9 +44,9 @@
     static async Task<string> ReadStringWithFixedLines(this Stream stream)
     {
         var stringValue = await stream.ReadString();
-        var builder = new StringBuilder(stringValue);
+        var builder = StringBuilderCache.Acquire(stringValue);
         builder.FixNewlines();
-        return builder.ToString();
+        return builder.GetStringAndRelease();
     }
 
 #if NETSTANDARD2_1 || NET5_0_OR_GREATER

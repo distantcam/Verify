@@ -8,7 +8,7 @@
         {
             ApplyScrubbers.Apply(extension, builder, settings);
 
-            var received = builder.ToString();
+            var received = builder.GetStringAndRelease();
             var stream = new Target(extension, received);
             targetList.Insert(0, stream);
         }
@@ -54,7 +54,7 @@
 
         if (!hasAppends && target is string stringTarget)
         {
-            builder = new(stringTarget);
+            builder = StringBuilderCache.Acquire(stringTarget);
             builder.FixNewlines();
             extension = settings.ExtensionOrTxt();
             return true;

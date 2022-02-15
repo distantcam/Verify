@@ -21,7 +21,7 @@ If that's not the case, and having multiple identical prefixes is acceptable, th
 
     public static string GetUniqueness(Namer namer)
     {
-        var builder = StringBuilderCache.Acquire(50);
+        var builder = StringBuilderCache.Acquire();
 
         AppendRuntime(namer, builder);
 
@@ -33,7 +33,7 @@ If that's not the case, and having multiple identical prefixes is acceptable, th
 
         AppendOsPlatform(namer, builder);
 
-        return StringBuilderCache.GetStringAndRelease(builder);
+        return builder.GetStringAndRelease();
     }
 
     static void AppendTargetFramework(Namer namer, StringBuilder builder)
