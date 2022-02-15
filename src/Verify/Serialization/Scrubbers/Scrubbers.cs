@@ -14,7 +14,7 @@ public static class Scrubbers
             return null;
         }
 
-        var builder = new StringBuilder();
+        var builder = StringBuilderCache.Acquire();
         using var reader = new StringReader(stackTrace);
         while (reader.ReadLine() is { } line)
         {
@@ -73,6 +73,6 @@ public static class Scrubbers
         }
 
         builder.TrimEnd();
-        return builder.ToString();
+        return StringBuilderCache.GetStringAndRelease(builder);
     }
 }
