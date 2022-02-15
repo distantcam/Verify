@@ -10,6 +10,6 @@
 
         builder.Length -= 1;
 
-        return StringBuilderCache.GetStringAndRelease(builder);
+        return builder.GetStringAndRelease();
     }
 }
