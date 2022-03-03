@@ -626,7 +626,7 @@ static DerivePathInfo derivePathInfo = (sourceFile, projectDirectory, type, meth
     return new(Path.GetDirectoryName(sourceFile)!, typeName, method.Name);
 };
 ```
-<sup><a href='/src/Verify/DerivePaths/VerifierSettings.cs#L7-L24' title='Snippet source file'>snippet source</a> | <a href='#snippet-defaultderivepathinfo' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Verify/DerivePaths/VerifierSettings.cs#L7-L26' title='Snippet source file'>snippet source</a> | <a href='#snippet-defaultderivepathinfo' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
