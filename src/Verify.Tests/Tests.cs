@@ -1,4 +1,5 @@
 ﻿// Non-nullable field is uninitialized.
+
 #pragma warning disable CS8618
 
 [UsesVerify]
@@ -345,7 +346,7 @@ public class Tests
     [Fact]
     public Task StreamNotAtStart()
     {
-        var stream = new MemoryStream(new byte[] {1, 2, 3, 4});
+        var stream = new MemoryStream(new byte[] { 1, 2, 3, 4 });
         stream.Position = 2;
         return Verify(stream);
     }
@@ -550,14 +551,14 @@ public class Tests
             .AppendValue("key", "value");
     }
 
-#region GetFilePath
+    #region GetFilePath
 
     string GetFilePath([CallerFilePath] string sourceFile = "")
     {
         return sourceFile;
     }
 
-#endregion
+    #endregion
 
     //[Fact(Skip = "explicit")]
     //public async Task ShouldUseExtraSettings()
