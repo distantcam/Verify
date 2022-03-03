@@ -146,8 +146,9 @@ csharp_new_line_before_members_in_anonymous_types = true:error
 
 dotnet_style_require_accessibility_modifiers = never:error
 
-#braces
-#csharp_prefer_braces = true:error
+#braces https://www.jetbrains.com/help/resharper/EditorConfig_CSHARP_CSharpCodeStylePageImplSchema.html#Braces
+braces_for_ifelse=required
+
 
 # msbuild
 [*.{csproj,targets,props}]
