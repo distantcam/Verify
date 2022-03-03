@@ -38,7 +38,7 @@ public class FileAppenderTests :
     [Fact]
     public Task NullText()
     {
-        return Verify((string) null!);
+        return Verify((string)null!);
     }
 
     [Fact]
@@ -50,7 +50,7 @@ public class FileAppenderTests :
     [Fact]
     public Task Anon()
     {
-        return Verify(new {foo = "bar"});
+        return Verify(new { foo = "bar" });
     }
 
     [Fact]
