@@ -6,14 +6,14 @@ public static partial class VerifierSettings
 
     static Dictionary<Type, Func<object, string>> parameterToNameLookup = new()
     {
-        {typeof(bool), target => ((bool) target).ToString(CultureInfo.InvariantCulture)},
-        {typeof(short), target => ((short) target).ToString(CultureInfo.InvariantCulture)},
-        {typeof(ushort), target => ((ushort) target).ToString(CultureInfo.InvariantCulture)},
-        {typeof(int), target => ((int) target).ToString(CultureInfo.InvariantCulture)},
-        {typeof(uint), target => ((uint) target).ToString(CultureInfo.InvariantCulture)},
-        {typeof(long), target => ((long) target).ToString(CultureInfo.InvariantCulture)},
-        {typeof(ulong), target => ((ulong) target).ToString(CultureInfo.InvariantCulture)},
-        {typeof(decimal), target => ((decimal) target).ToString(CultureInfo.InvariantCulture)},
+        { typeof(bool), target => ((bool)target).ToString(CultureInfo.InvariantCulture) },
+        { typeof(short), target => ((short)target).ToString(CultureInfo.InvariantCulture) },
+        { typeof(ushort), target => ((ushort)target).ToString(CultureInfo.InvariantCulture) },
+        { typeof(int), target => ((int)target).ToString(CultureInfo.InvariantCulture) },
+        { typeof(uint), target => ((uint)target).ToString(CultureInfo.InvariantCulture) },
+        { typeof(long), target => ((long)target).ToString(CultureInfo.InvariantCulture) },
+        { typeof(ulong), target => ((ulong)target).ToString(CultureInfo.InvariantCulture) },
+        { typeof(decimal), target => ((decimal)target).ToString(CultureInfo.InvariantCulture) },
 #if NET5_0_OR_GREATER
         {typeof(Half), target => ((Half) target).ToString(CultureInfo.InvariantCulture)},
 #endif
@@ -33,13 +33,13 @@ public static partial class VerifierSettings
             }
         },
 #endif
-        {typeof(float), target => ((float) target).ToString(CultureInfo.InvariantCulture)},
-        {typeof(double), target => ((double) target).ToString(CultureInfo.InvariantCulture)},
+        { typeof(float), target => ((float)target).ToString(CultureInfo.InvariantCulture) },
+        { typeof(double), target => ((double)target).ToString(CultureInfo.InvariantCulture) },
         {
             typeof(DateTime),
             target =>
             {
-                var dateTime = (DateTime) target;
+                var dateTime = (DateTime)target;
                 return dateTime.ToString("yyyy-MM-ddTHH-mm-ss.FFFFFFFz");
             }
         },
@@ -47,7 +47,7 @@ public static partial class VerifierSettings
             typeof(DateTimeOffset),
             target =>
             {
-                var dateTimeOffset = (DateTimeOffset) target;
+                var dateTimeOffset = (DateTimeOffset)target;
                 return dateTimeOffset.ToString("yyyy-MM-ddTHH-mm-ss.FFFFFFFz", CultureInfo.InvariantCulture);
             }
         }
@@ -55,7 +55,7 @@ public static partial class VerifierSettings
 
     public static void NameForParameter<T>(ParameterToName<T> func)
     {
-        parameterToNameLookup[typeof(T)] = o => func((T) o);
+        parameterToNameLookup[typeof(T)] = o => func((T)o);
     }
 
     static char[] invalidPathChars =
@@ -178,7 +178,7 @@ public static partial class VerifierSettings
     }
 
     /// <summary>
-    /// Use <paramref name="assembly"/> TargetFrameworkAttribute to make the test results unique.
+    /// Use <paramref name="assembly" /> TargetFrameworkAttribute to make the test results unique.
     /// Used when a test produces different results based on TargetFramework.
     /// </summary>
     public static void UniqueForTargetFramework(Assembly assembly)
@@ -188,7 +188,7 @@ public static partial class VerifierSettings
     }
 
     /// <summary>
-    /// Use the <paramref name="assembly"/> TargetFrameworkAttribute name and version to make the test results unique.
+    /// Use the <paramref name="assembly" /> TargetFrameworkAttribute name and version to make the test results unique.
     /// Used when a test produces different results based on TargetFramework and TargetFramework version.
     /// </summary>
     public static void UniqueForTargetFrameworkAndVersion(Assembly assembly)
@@ -198,7 +198,7 @@ public static partial class VerifierSettings
     }
 
     /// <summary>
-    /// Use the <paramref name="assembly"/> configuration (debug/release) to make the test results unique.
+    /// Use the <paramref name="assembly" /> configuration (debug/release) to make the test results unique.
     /// Used when a test produces different results based on assembly configuration.
     /// </summary>
     public static void UniqueForAssemblyConfiguration(Assembly assembly)
