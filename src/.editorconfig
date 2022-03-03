@@ -148,6 +148,12 @@ dotnet_style_require_accessibility_modifiers = never:error
 
 #braces https://www.jetbrains.com/help/resharper/EditorConfig_CSHARP_CSharpCodeStylePageImplSchema.html#Braces
 braces_for_ifelse = required
+braces_for_foreach = required
+braces_for_while = required
+braces_for_dowhile = required
+braces_for_lock = required
+braces_for_fixed = required
+braces_for_for = required
 
 # Xml files
 [*.{xml,config,nuspec,resx,vsixmanifest,csproj,targets,props}]
