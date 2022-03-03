@@ -149,15 +149,11 @@ dotnet_style_require_accessibility_modifiers = never:error
 #braces https://www.jetbrains.com/help/resharper/EditorConfig_CSHARP_CSharpCodeStylePageImplSchema.html#Braces
 braces_for_ifelse = required
 
-
-# msbuild
-[*.{csproj,targets,props}]
-indent_size = 2
-
 # Xml files
-[*.{xml,config,nuspec,resx,vsixmanifest}]
+[*.{xml,config,nuspec,resx,vsixmanifest,csproj,targets,props}]
 indent_size = 2
-resharper_xml_wrap_tags_and_pi = true:error
+# https://www.jetbrains.com/help/resharper/EditorConfig_XML_XmlCodeStylePageSchema.html#resharper_xml_blank_line_after_pi
+blank_line_after_pi = false
 
 [*.json]
 indent_size = 2
