@@ -144,6 +144,8 @@ csharp_new_line_before_finally = true:error
 csharp_new_line_before_members_in_object_initializers = true:error
 csharp_new_line_before_members_in_anonymous_types = true:error
 
+dotnet_style_require_accessibility_modifiers = never:error
+
 #braces
 #csharp_prefer_braces = true:error
 
